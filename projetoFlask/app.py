@@ -23,9 +23,9 @@ def index():
     fact3 = requests.get("https://catfact.ninja/fact")
 
     return render_template("index.html",
-                            data_json = fact.json(),
-                            data_json2 = fact2.json(),
-                            data_json3 = fact3.json())
+                            data_json = fact.json()["fact"],
+                            data_json2 = fact2.json()["fact"],
+                            data_json3 = fact3.json()["fact"])
 
 
 @app.route("/inserthost", methods=["POST","GET"])
@@ -42,4 +42,4 @@ def inserthost():
 
 
 if __name__ == "__main__":
-    app.run(host = "0.0.0.0", debug=True, port=5000)
+    app.run(host = "0.0.0.0", debug=True, port=2000)
