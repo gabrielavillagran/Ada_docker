@@ -2,6 +2,6 @@ CREATE DATABASE flaskdocker;
 
 USE flaskdocker;
 
-CREATE TABLE `flaskdocker`.`users` (
-    `id` INT NOT NULL AUTO_INCREMENT, `name` VARCHAR(255), PRIMARY KEY (ID)
+CREATE TABLE `flaskdocker`.`facts` (
+    `id` INT NOT NULL AUTO_INCREMENT, `fact` VARCHAR(10000), PRIMARY KEY (ID)
 );

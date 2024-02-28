@@ -1,0 +1,24 @@
+
+:root{
+    --cor-texto: rgb(252, 53, 162);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+body .json {
+    display: flex;
+    color: var(--cor-texto);
+    font-size: larger;
+    margin: 30px auto;
+    padding: 20px 2rem;
+    width:max-content;
+    background-color: black;
+}

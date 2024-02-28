@@ -8,7 +8,7 @@ RUN apt-get update && \
 # define um diretório de trabalho para outras instruções Dockerfile, como RUN , CMD e também o diretório de trabalho para executar instâncias da imagem do contêiner
 WORKDIR /app
 
-RUN pip install Flask requests flask_mysqldb
+RUN pip install Flask requests flask_mysqldb bootstrap-flask
 
 COPY . .
 
