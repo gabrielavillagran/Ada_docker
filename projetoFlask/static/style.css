@@ -1,24 +1,27 @@
 
 :root{
     --cor-texto: rgb(252, 53, 162);
+    --bg-color:#1E2227;
+    --cor-titulo: #bec6ca;
 }
 
 * {
     margin: 0;
     padding: 0;
+    background-color: var(--bg-color)
 }
 
-h1 {
-    text-align: center;
-}
-
-
-body .json {
+.main .json{
     display: flex;
     color: var(--cor-texto);
     font-size: larger;
-    margin: 30px auto;
+    margin: 30px 100px;
     padding: 20px 2rem;
-    width:max-content;
-    background-color: black;
+    width:fit-content;
+}
+
+.main h1 {
+    color: var(--cor-titulo);
+    margin: 20px 0;
+    text-align: center;
 }

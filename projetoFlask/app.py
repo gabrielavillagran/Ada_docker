@@ -19,8 +19,13 @@ mysql = MySQL(app)
 @app.route("/", methods=["GET"])
 def index():
     fact = requests.get("https://catfact.ninja/fact")
+    fact2 = requests.get("https://catfact.ninja/fact")
+    fact3 = requests.get("https://catfact.ninja/fact")
+
     return render_template("index.html",
-                            data_json = fact.json())
+                            data_json = fact.json(),
+                            data_json2 = fact2.json(),
+                            data_json3 = fact3.json())
 
 
 @app.route("/inserthost", methods=["POST","GET"])
