@@ -1,37 +1,39 @@
 version: '3.8'
 
 services:
-  app:
-    build: 
-      context: /home/ubuntu/projeto_ada_gabriela/projetoFlask
+  flask_app:
+    build:
+      context: ./projetoFlask
       dockerfile: Dockerfile
     ports:
-      - "2000:2000"
+      - "3000:3000"
     volumes:
-      - /home/ubuntu/projeto_ada_gabriela/projetoFlask:/app
+      - .:/app
     depends_on:
-      - db
-    networks:
-      - projetoada
-
-  db:
-    image: mysql:5.7
-    volumes:
-      - db_data:/var/lib/mysql
-      - ./backup:/backup
-      - /home/ubuntu/projeto_ada_gabriela/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+      - mysql_api_container
     environment:
-      MYSQL_ROOT_PASSWORD: "minhasenha"
-      MYSQL_DATABASE: "flaskdocker"
-      MYSQL_USER: "root"
-      MYSQL_PASSWORD: "minhasenha"
+      - FLASK_ENV=development
+    networks:
+      - app_network
+
+  mysql_api_container:
+    build:
+      context: ./projetomysql
+      dockerfile: Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: minhasenha
+      MYSQL_DATABASE: flaskdocker
     ports:
       - "3306:3306"
+    volumes:
+      - mysql_db:/var/lib/mysql
+      - ./backup:/backup
     networks:
-      - projetoada
+      - app_network
 
 networks:
-  projetoada:
+  app_network:
+    driver: bridge
 
 volumes:
-  db_data:
+  mysql_db:
