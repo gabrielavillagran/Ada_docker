@@ -13,6 +13,8 @@ https://hub.docker.com/repository/docker/gabrielavillagran/mysql/general
 
 ## Aplicação
 ```
+docker network create projetoada
+
 docker build -t aplicacao_flask --no-cache .
 docker run -d -p 3000:3000 --name flask-container --network projetoada aplicacao_flask
 
