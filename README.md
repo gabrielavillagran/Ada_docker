@@ -1,5 +1,5 @@
 # Fatos sobre gatos
-Essa aplicacao ela apresenta 3 fatos sobre gatos 😻
+Essa aplicacao apresenta 3 fatos sobre gatos 😻
 
 ## Dockerhub
 ```
