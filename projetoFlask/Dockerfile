@@ -12,6 +12,6 @@ RUN pip install Flask requests flask_mysqldb bootstrap-flask
 
 COPY . .
 
-EXPOSE 5000
+EXPOSE 3000
 
 CMD ["python", "./app.py"]
